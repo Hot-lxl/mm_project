@@ -1,0 +1,259 @@
+body {
+    max-width: 750px;
+    min-width: 350px;
+    // height: 1400px;
+    margin: 0 auto;
+    background-color: #F2F4F7;
+}
+
+//（媒体监听） 约束当前屏幕大于750px的时候，html的字体大小就不在改变
+@media screen and (min-width:750px) {
+    html {
+        font-size: 37.5px !important;
+    }
+}
+
+.warp {
+    background-color: #FFFFFF;
+    padding-bottom: 1.1467rem;
+}
+
+a {
+    text-decoration: none;
+    color: #707070;
+}
+
+.header {
+    height: 2.1333rem;
+    text-align: center;
+    border-bottom: 1px solid #ececec;
+    line-height: 2.1333rem;
+    font-size: .9333rem;
+    color: black;
+}
+
+.nav {
+    // 让盒子变成弹性
+    display: flex;
+    // 显示不下就换行
+    flex-wrap: wrap;
+    // 控制内容的上下间距
+    padding: 1.2rem 0 1.6rem 0;
+
+    .item {
+        display: flex;
+        width: 33.33%;
+        // 纵向排序
+        flex-direction: column;
+        // 居中显示
+        align-items: center;
+
+        img {
+            width: 3.7067rem;
+            height: 3.7067rem;
+        }
+
+        span {
+            font-size: .6667rem;
+            color: #707070;
+        }
+
+        // item下面的子元素前三个（-n+3前三个）
+        &:nth-child(-n+3) {
+            margin-bottom: 1.6533rem
+        }
+    }
+
+}
+
+.go {
+    margin: 0 .2667rem 0 .2667rem;
+}
+
+.content {
+    background-color: #FFFFFF;
+    padding: 1.0667rem .64rem;
+    margin-top: .2667rem;
+}
+
+.con-hd {
+    display: flex;
+    /* 均匀排列每个元素
+        首个元素放置于起点，末尾元素放置于终点 */
+    justify-content: space-between;
+    height: 1.0133rem;
+    height: 1.0133rem;
+    line-height: 1.0133rem;
+
+    &>h4 {
+        margin: 0;
+        font-size: .7467rem;
+        color: #333333;
+
+        .icon {
+            display: inline-block;
+            height: 1.0133rem;
+            width: 1.0133rem;
+            // 让图片和文字垂直居中
+            vertical-align: top;
+        }
+    }
+
+    .more {
+        font-size: .5867rem;
+        color: #999999;
+    }
+
+}
+
+.con-footer {
+    margin-top: 1.04rem;
+    // 相对定位
+    position: relative;
+
+    .swiper-container {
+        // width: 100%;
+        // 控制所有图片只能在规定宽度
+        width: 14.4rem;
+        height: 100%;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        outline: none;
+        // 创建之后
+        &:after {
+            font-size: 1.066667rem;
+            color: #333;
+        }
+    }
+
+    .swiper-slide {
+        text-align: center;
+        font-size: .48rem;
+        background: #fff;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        // 垂直排列
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        transition: 300ms;
+        // 其余的兄弟0.8(80%) scale()定义2d转换可以改变大小
+        transform: scale(0.8);
+        opacity: 0.5;
+
+        a {
+            width: 9.0133rem;
+            height: 10.0267rem;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        p {
+            font-size: .6667rem;
+            height: 1.0667rem;
+            width: 9.0133rem;
+            color: #333333;
+            margin-top: .64rem;
+        }
+    }
+
+    // 当前选中的slid 中间的图片
+    .swiper-slide-active,
+    .swiper-slide-duplicate-active {
+        transform: scale(1);
+        z-index: 999;
+        opacity: 1;
+    }
+}
+
+.study_con {
+    padding-bottom: 3.2rem;
+
+    // 学习模块轮播图
+    .study {
+        .swiper {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .swiper-slide {
+            margin: 10px;
+            background: #fff;
+            width: 7.7333rem;
+            height: 9.0667rem;
+            font-size: 18px;
+            background-color: #fff;
+            border-radius: 0.266667rem;
+            box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
+            padding: 5px;
+
+            h4 {
+                font-size: 0.693333rem;
+                margin: .533333rem 0;
+                font-weight: 400;
+                padding: 0 0.266667rem;
+            }
+
+            p {
+                font-size: .5333rem;
+                padding: 0 .32rem;
+
+                span {
+                    color: #ff4040;
+                }
+            }
+
+
+        }
+
+    }
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 2.9333rem;
+    background-color: #FFFFFF;
+    border-top: 1px #ccc solid;
+    display: flex;
+    align-items: center;
+
+    .item {
+        flex: 1;
+        display: flex;
+        // 向下排序
+        flex-direction: column;
+        // 里面的子元素居中
+        align-items: center;
+
+        img {
+            width: 1.04rem;
+            height: 1.093333rem;
+        }
+
+        p {
+            font-size: .5867rem;
+            // color: #2ccac7;
+            color: #666666;
+            margin-top: .2667rem;
+        }
+    }
+}
